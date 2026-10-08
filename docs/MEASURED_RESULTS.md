@@ -21,3 +21,6 @@ The TinyQuant model set consists of three seeds (17, 43, 91), each with float32 
 The [Korean experiment report](Model_Quantization_and_Evaluation_Report_KO.pdf) presents the quantization experiment and its integration with EvalReceipt. Its directory-level reproduction commands refer to sibling `tinyquant-lab` and `evalreceipt` checkouts; use the experiment READMEs in this repository for the adapter commands.
 
 The GitHub Actions matrix covers Ubuntu and Windows on Python 3.11–3.13. Hosted CI results will be available after the first repository run.
+
+
+Recorded source_results_sha256 values identify the original measured TinyQuant results JSON. The public export removes local runtime directory paths, so its metadata hash differs; model bytes and numerical results are unchanged.
