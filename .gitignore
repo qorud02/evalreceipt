@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/*
+!dist/evalreceipt-0.1.0-py3-none-any.whl
+.venv/
+generated-experiments/
+reports/
+experiments/quant_receipts/runs/
+experiments/quant_receipts/summary.json

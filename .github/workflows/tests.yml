@@ -1,0 +1,22 @@
+name: Receipt checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.12', '3.13']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover -s tests -v
+      - run: python scripts/make_fixtures.py
+      - run: python -m evalreceipt fixtures/clean.json --json-out reports/clean.json --html-out reports/clean.html
+      - run: python experiments/eval_execution/run_experiment.py --output-dir generated-experiments/execution-ci

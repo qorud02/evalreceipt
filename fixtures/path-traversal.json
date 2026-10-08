@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "run_id": "path-traversal",
+  "started_at": "2026-10-08T13:20:58.288169+00:00",
+  "finished_at": "2026-10-08T13:21:01.403322+00:00",
+  "pass_threshold": 1.0,
+  "expected_cases": [
+    "case-a",
+    "case-b"
+  ],
+  "cases": [
+    {
+      "id": "case-a",
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "score": 1.0,
+      "passed": true,
+      "artifact": {
+        "path": "../outside.json",
+        "sha256": "7fe1e693580fe5bbe21bc56f4443d0cbf2a4577ac05c4cdca22a71c9ec9636dd",
+        "created_at": "2026-10-08T13:21:00.403322+00:00"
+      }
+    },
+    {
+      "id": "case-b",
+      "status": "completed",
+      "exit_code": 0,
+      "timed_out": false,
+      "score": 1.0,
+      "passed": true,
+      "artifact": {
+        "path": "artifacts/prediction.json",
+        "sha256": "7fe1e693580fe5bbe21bc56f4443d0cbf2a4577ac05c4cdca22a71c9ec9636dd",
+        "created_at": "2026-10-08T13:21:00.403322+00:00"
+      }
+    }
+  ]
+}

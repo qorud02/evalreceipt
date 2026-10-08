@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvalReceipt manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "started_at", "finished_at", "pass_threshold", "expected_cases", "cases"],
+  "properties": {
+    "schema_version": {"const": 1, "type": "integer"},
+    "run_id": {"type": "string", "pattern": "\\S"},
+    "started_at": {"type": "string", "format": "date-time"},
+    "finished_at": {"type": "string", "format": "date-time"},
+    "pass_threshold": {"type": "number", "minimum": 0, "maximum": 1},
+    "expected_cases": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "\\S"}},
+    "cases": {"type": "array", "items": {"$ref": "#/$defs/case"}}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "created_at"],
+      "properties": {
+        "path": {"type": "string", "pattern": "\\S"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-fA-F]{64}$"},
+        "created_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "case": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "status", "exit_code", "timed_out", "score", "passed", "artifact"],
+      "properties": {
+        "id": {"type": "string", "pattern": "\\S"},
+        "status": {"enum": ["completed", "failed", "timeout"]},
+        "exit_code": {"type": ["integer", "null"]},
+        "timed_out": {"type": "boolean"},
+        "score": {"type": ["number", "null"]},
+        "passed": {"type": ["boolean", "null"]},
+        "artifact": {"oneOf": [{"$ref": "#/$defs/artifact"}, {"type": "null"}]}
+      }
+    }
+  }
+}

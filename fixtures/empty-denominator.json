@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "run_id": "empty-denominator",
+  "started_at": "2026-10-08T13:20:58.288169+00:00",
+  "finished_at": "2026-10-08T13:21:01.403322+00:00",
+  "pass_threshold": 1.0,
+  "expected_cases": [],
+  "cases": []
+}

@@ -1,0 +1,412 @@
+{
+  "experiment": "EvalReceipt execution fault matrix",
+  "generated_at": "2026-10-08T13:21:30.735236+00:00",
+  "scenario_count": 18,
+  "checks_passed": 18,
+  "control_count": 2,
+  "integrity_fault_count": 16,
+  "faults_detected": 16,
+  "all_expected_checks_passed": true,
+  "native": null,
+  "false_success_control": {
+    "gold_predictions": [],
+    "missing_output_fallback": [],
+    "naive_score": 1.0,
+    "process_exit_code": 7,
+    "audit_accepts_as_valid_pass": false
+  },
+  "scenarios": [
+    {
+      "scenario": "normal",
+      "category": "real-subprocess",
+      "expected_integrity": true,
+      "actual_integrity": true,
+      "check_passed": true,
+      "semantic_passed": 1,
+      "success_rate": 1.0,
+      "issue_codes": [],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 3.8561937999911606
+      }
+    },
+    {
+      "scenario": "wrong-answer",
+      "category": "real-subprocess",
+      "expected_integrity": true,
+      "actual_integrity": true,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [],
+      "process": {
+        "mode": "wrong-answer",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 3.3477277000201866
+      }
+    },
+    {
+      "scenario": "crash-before",
+      "category": "real-subprocess",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "incomplete_execution",
+        "missing_artifact",
+        "missing_passed",
+        "missing_score",
+        "process_failure"
+      ],
+      "process": {
+        "mode": "crash-before",
+        "interpreter": "python.exe",
+        "exit_code": 7,
+        "timed_out": false,
+        "output_exists": false,
+        "output_parse_error": null,
+        "wall_seconds": 6.846320000011474
+      }
+    },
+    {
+      "scenario": "crash-after",
+      "category": "real-subprocess",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "incomplete_execution",
+        "process_failure"
+      ],
+      "process": {
+        "mode": "crash-after",
+        "interpreter": "python.exe",
+        "exit_code": 9,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 8.935423000017181
+      }
+    },
+    {
+      "scenario": "timeout",
+      "category": "real-subprocess",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "incomplete_execution",
+        "missing_artifact",
+        "missing_passed",
+        "missing_score",
+        "process_failure",
+        "timeout"
+      ],
+      "process": {
+        "mode": "timeout",
+        "interpreter": "python.exe",
+        "exit_code": null,
+        "timed_out": true,
+        "output_exists": false,
+        "output_parse_error": null,
+        "wall_seconds": 1.6204697999637574
+      }
+    },
+    {
+      "scenario": "invalid-json",
+      "category": "real-subprocess",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "incomplete_execution",
+        "missing_passed",
+        "missing_score"
+      ],
+      "process": {
+        "mode": "invalid-json",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": "Expecting value: line 1 column 10 (char 9)",
+        "wall_seconds": 2.402169100008905
+      }
+    },
+    {
+      "scenario": "nan-score",
+      "category": "real-subprocess",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "incomplete_execution",
+        "missing_passed",
+        "missing_score"
+      ],
+      "process": {
+        "mode": "nan-score",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": "Nonfinite score token NaN",
+        "wall_seconds": 2.988148300035391
+      }
+    },
+    {
+      "scenario": "missing-case",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 1,
+      "success_rate": 0.5,
+      "issue_codes": [
+        "missing_case"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 5.010743200022262
+      }
+    },
+    {
+      "scenario": "duplicate-case",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "duplicate_case"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 2.9759583999984898
+      }
+    },
+    {
+      "scenario": "extra-case",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "extra_case",
+        "missing_case"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 8.478669599979185
+      }
+    },
+    {
+      "scenario": "empty-denominator",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": null,
+      "issue_codes": [
+        "empty_expected_cases",
+        "extra_case"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 6.2634682999923825
+      }
+    },
+    {
+      "scenario": "score-out-of-range",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "score_out_of_range"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 3.3396162999561056
+      }
+    },
+    {
+      "scenario": "pass-score-mismatch",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "pass_score_mismatch"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 3.6571244999649934
+      }
+    },
+    {
+      "scenario": "artifact-tampered",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "hash_mismatch",
+        "stale_artifact_mtime"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 2.660454099997878
+      }
+    },
+    {
+      "scenario": "artifact-deleted",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "missing_artifact"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 8.898878299980424
+      }
+    },
+    {
+      "scenario": "stale-artifact",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "stale_artifact_mtime",
+        "stale_artifact_timestamp"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 7.080075999954715
+      }
+    },
+    {
+      "scenario": "artifact-traversal",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "unsafe_artifact_path"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 1.5913220000220463
+      }
+    },
+    {
+      "scenario": "absolute-artifact",
+      "category": "receipt-mutation",
+      "expected_integrity": false,
+      "actual_integrity": false,
+      "check_passed": true,
+      "semantic_passed": 0,
+      "success_rate": 0.0,
+      "issue_codes": [
+        "unsafe_artifact_path"
+      ],
+      "process": {
+        "mode": "normal",
+        "interpreter": "python.exe",
+        "exit_code": 0,
+        "timed_out": false,
+        "output_exists": true,
+        "output_parse_error": null,
+        "wall_seconds": 1.41116559994407
+      }
+    }
+  ]
+}

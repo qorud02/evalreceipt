@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use EvalReceipt in your research, please cite this software."
+type: software
+title: EvalReceipt
+authors:
+  - family-names: Bae
+    given-names: Kyunghan
+version: 0.1.0
+date-released: 2026-10-08
+repository-code: https://github.com/qorud02/evalreceipt
+url: https://github.com/qorud02/evalreceipt
+license: MIT

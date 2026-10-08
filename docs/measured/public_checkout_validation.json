@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-08T13:21:30.735236+00:00",
+  "version": "0.1.0",
+  "unit_tests": {
+    "run": 40,
+    "passed": 40,
+    "skipped": 0,
+    "seconds": 134.498,
+    "python": "3.12.9",
+    "platform": "Windows"
+  },
+  "fresh_clean_fixture": {
+    "integrity_ok": true,
+    "exit_code": 0
+  },
+  "portable_default_execution": {
+    "scenarios": 18,
+    "checks_passed": 18,
+    "controls": 2,
+    "faults_detected": 16,
+    "native_dependency_used": false
+  },
+  "public_adapter_help_and_compile": true,
+  "wheel_sha256": "26907180275aee265ca8b76c5035ae1f076f18898c43f7c8a01472c3d2e2c297",
+  "git_initial_branch": "main",
+  "hosted_ci_executed": false
+}

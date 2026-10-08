@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evalreceipt"
+version = "0.1.0"
+description = "Execution evidence checks for evaluation runs"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+evalreceipt = "evalreceipt.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["evalreceipt*"]
